@@ -55,14 +55,6 @@ addEventOnElements(navTogglers, "click", toggleNavbar);
 
 const header = document.querySelector("[data-header]");
 
-window.addEventListener("scroll", function () {
-  if (window.scrollY >= 100) {
-    header.classList.add("active");
-  } else {
-    header.classList.remove("active");
-  }
-});
-
 
 
 /**
@@ -147,3 +139,15 @@ const initSlider = function (currentSlider) {
 }
 
 for (let i = 0, len = sliders.length; i < len; i++) { initSlider(sliders[i]); }
+
+// Hide navbar on scroll down, show on scroll up
+let lastScrollTop = 0;
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    header.classList.add('hide-navbar');
+  } else {
+    header.classList.remove('hide-navbar');
+  }
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
