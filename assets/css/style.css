@@ -1658,3 +1658,24 @@ body.nav-active { overflow: hidden; }
   margin: 0;
   vertical-align: middle;
 }
+
+/* Tambahkan ini untuk memberi ruang di bawah navbar saat header fixed */
+.hero {
+  padding-top: 100px; /* Sesuaikan dengan tinggi header/navbar */
+}
+
+/* Jika kamu pakai media query mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px; /* Tambah lebih banyak ruang untuk layar kecil */
+  }
+
+  .navbar {
+    z-index: 1000;
+  }
+
+  .header {
+    z-index: 1001; /* Pastikan header tetap di atas konten biasa */
+  }
+}
+
