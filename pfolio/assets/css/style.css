@@ -897,7 +897,7 @@ body.nav-active { overflow: hidden; }
   .hero-actions {
     justify-content: flex-start;
     gap: 30px;
-  }
+}
 
   .hero-social-links {
     justify-content: flex-start;
